@@ -22,15 +22,51 @@ Have fun, and good luck!
 
 
 ===
-Install
 
-https://www.rust-lang.org/tools/install
+Machine Setup
 
-`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-`source "$HOME/.cargo/env"`
-`sudo dnf groupinstall "Development Tools"`
-`sudo dnf install openssl`
-`sudo dnf install pkg-config openssl-devel`
+* If windows... get wsl2 with fedora setup.
+    * https://www.linuxfordevices.com/tutorials/linux/install-fedora-on-windows 
+* Set up visual studio code on host machine with wsl2 plugin
+    * rust-analyzer
+    * rust syntax (maybe?! not sure if needed)
+    * crates
+    * even better toml
+* Install other extensions into wsl2 instance
+* `sudo dnf install git-all`
+* cd into a location where repos are kept
+* `git clone https://github.com/ambaumann/learning-rust-core.git`
+* Configure shell... zsh and oh-my-zish looks pretty good
+    * `sudo dnf install zsh`
+    * launch and configure zsh default settings by typing 'zsh'
+    * Default zsh 
+        * `sudo dnf install util-linux-user` for chsh
+        * `chsh -s $(which zsh)`
+    * `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+    * change default terminal in vs code to zsh
+
+* https://www.rust-lang.org/tools/install
+* `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+* `source "$HOME/.cargo/env"`
+* `vi ~/.zshrc` and update alias for zshconfig, ohmyzsh and add rustup env above
+* source new changes with `zsh`
+* `sudo dnf groupinstall "Development Tools"`
+* `sudo dnf install openssl`
+* `sudo dnf install pkg-config openssl-devel`
+* Clone my rustlings project for now.
+    * From repos directory `git clone https://github.com/ambaumann/rustlings-solution.git`
+    * `cd ./rustlings-solution`
+    * `code -n .`
+    * `git checkout first-go`
+    * `./install.sh` from project directory
+    * `rustlings lsp` for generating the editor lsp config
+    * Validate that the rust-analyzer is running
+        * I needed to add: `rustup component add rust-src`
+        * https://github.com/rust-lang/rust-analyzer/issues/11606
+    * `rustlings watch`
+
+
+
 
 
 ===
