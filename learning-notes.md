@@ -72,3 +72,47 @@ Have fun, and good luck!
 Rustlings
 
 Pretty easy to set up. Make sure you open in own project in vs code and run rustlings lsp.
+
+---
+
+## Golang
+
+Install instructions:
+
+* Go to <https://go.dev/doc/install>
+* Install instructions are there. It is a bit annoying to set up in WSL.
+* I put the install into XYZ
+* `tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz`
+* To .zshrc: `export PATH=$PATH:/usr/local/go/bin`
+
+VS Code Go Extensions
+
+* Install Go extension
+  * If you see `The "gopls" command is not available. Run "go install -v golang.org/x/tools/gopls@latest" to install.`
+    Hit "Install ALL" if prompted by VS Code.
+  * <https://stackoverflow.com/questions/66668506/how-to-solve-vs-code-gopls-command-is-not-available>
+  * Installing 7 tools at /home/andrew/go/bin in module mode.
+    * gotests
+    * gomodifytags
+    * impl
+    * goplay
+    * dlv
+    * staticcheck
+    * gopls
+* go-outliner (install go modules it uses)
+
+---
+
+## Exercism
+
+* Instructions at: <https://exercism.org/cli-walkthrough>
+* Select Linux
+* Download release from: <https://github.com/exercism/cli/releases>
+* unpack with `tar -xf ./exercism-3.1.0-linux-x86_64.tar.gz`
+* `mkdir -p ~/bin`
+* `mv ./exercism ~/bin`
+* test with `~/bin/exercism`
+* test if exercism is in path `[[ ":$PATH:" == *":$HOME/bin:"* || ":$PATH:" == *":~/bin:"* ]] && echo "~/bin is in PATH" || echo "~/bin is not in PATH"`
+* if it isn't, modify .zshrc with 'export PATH=~/bin:$PATH'
+* set your exercism token with instructions from the website `exercism configure --token=....`
+* you should be ready to download exercises! Example `exercism download --exercise=blackjack --track=go`
